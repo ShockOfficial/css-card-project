@@ -1,0 +1,220 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #242424;
+  font-family: sans-serif;
+  min-height: 100vh;
+  color: #f0f0f0f0;
+}
+
+.card-box {
+  position: relative;
+  height: 500px;
+  width: 350px;
+  background-image: url("../img/norway.jpg");
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  overflow: hidden;
+}
+
+.card-box .card-title {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  color: #f4fff4;
+  font-size: 25px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.card-box .card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  max-width: calc(100% + 20px);
+  left: -20px;
+  width: calc(100% + 20px);
+  height: 6px;
+  background-color: #6bd374;
+}
+
+.card-box .card-title {
+  -webkit-transform: translateY(220px);
+          transform: translateY(220px);
+  -webkit-transition: opacity 1s, -webkit-transform 0.5s;
+  transition: opacity 1s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 1s;
+  transition: transform 0.5s, opacity 1s, -webkit-transform 0.5s;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 25px;
+  width: 350px;
+  height: 270px;
+}
+
+.card-text p {
+  padding: 30px 0;
+  font-size: 18px;
+  color: #f0f0f0f0;
+}
+
+.learn-more-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 25px;
+  text-decoration: none;
+  padding: 13px 15px;
+  background-color: #6bd374;
+  color: black;
+  cursor: pointer;
+}
+
+.learn-more-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background-color: #57c3ca;
+  width: 100%;
+  height: 100%;
+}
+
+.learn-more-btn:active::after {
+  opacity: 0.6;
+}
+
+.card-bg {
+  position: absolute;
+  bottom: 0;
+  background: #020024;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0.584)), color-stop(72%, rgba(0, 0, 0, 0.952)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.584) 0%, rgba(0, 0, 0, 0.952) 72%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 65%;
+}
+
+@media (hover) {
+  .card-box {
+    position: relative;
+    height: 500px;
+    width: 350px;
+    background-image: url("../img/norway.jpg");
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    overflow: hidden;
+  }
+  .card-box .card-title {
+    position: absolute;
+    left: 20px;
+    top: 220px;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    color: #f4fff4;
+    font-size: 25px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+  }
+  .card-box .card-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    max-width: calc(100% + 20px);
+    left: -20px;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s 0.2s;
+    transition: -webkit-transform 0.5s 0.2s;
+    transition: transform 0.5s 0.2s;
+    transition: transform 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+    width: calc(100% + 20px);
+    height: 6px;
+    background-color: #6bd374;
+  }
+  .card-box > *:not(.card-title) {
+    -webkit-transform: translateY(75%);
+            transform: translateY(75%);
+    opacity: 0;
+    -webkit-transition: opacity 1s, -webkit-transform 0.5s;
+    transition: opacity 1s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 1s;
+    transition: transform 0.5s, opacity 1s, -webkit-transform 0.5s;
+  }
+  .card-box .card-title {
+    -webkit-transform: translateY(220px);
+            transform: translateY(220px);
+    -webkit-transition: opacity 1s, -webkit-transform 0.5s;
+    transition: opacity 1s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 1s;
+    transition: transform 0.5s, opacity 1s, -webkit-transform 0.5s;
+  }
+  .card-text {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 25px;
+    width: 350px;
+    height: 270px;
+  }
+  .card-text p {
+    padding: 30px 0;
+    font-size: 18px;
+    color: #f0f0f0f0;
+  }
+  .card-box:hover,
+  .card-box:focus-within {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  .card-box:hover > *,
+  .card-box:focus-within > * {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  .card-box:hover .card-title::after,
+  .card-box:focus-within .card-title::after {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .learn-more-btn:hover {
+    background-color: #ccf7cf;
+  }
+}
+/*# sourceMappingURL=style.css.map */

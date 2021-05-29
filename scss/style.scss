@@ -1,0 +1,174 @@
+$colors: ( title-color: #f4fff4, text: #f0f0f0f0, tint-color: #6bd374);
+$text-padding: 10px 25px;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242424;
+    font-family: sans-serif;
+    min-height: 100vh;
+    color: map-get($map: $colors, $key: text);
+}
+
+.card-box {
+    position: relative;
+    height: 500px;
+    width: 350px;
+    background-image: url('../img/norway.jpg');
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s;
+    overflow: hidden;
+    .card-title {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        max-width: max-content;
+        color: map-get($map: $colors, $key: title-color);
+        font-size: 25px;
+        transition: transform 0.5s
+    }
+    .card-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        max-width: calc(100% + 20px);
+        left: -20px;
+        width: calc(100% + 20px);
+        height: 6px;
+        background-color: map-get($map: $colors, $key: tint-color);
+    }
+}
+
+.card-box .card-title {
+    transform: translateY(220px);
+    transition: transform 0.5s, opacity 1s;
+}
+
+.card-text {
+    position: absolute;
+    bottom: 0;
+    padding: $text-padding;
+    width: 350px;
+    height: 270px;
+    p {
+        padding: 30px 0;
+        font-size: 18px;
+        color: map-get($map: $colors, $key: text);
+    }
+}
+
+.learn-more-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 25px;
+    text-decoration: none;
+    padding: 13px 15px;
+    background-color: map-get($map: $colors, $key: tint-color);
+    color: black;
+    cursor: pointer;
+}
+
+.learn-more-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.2s;
+    background-color: rgb(87, 195, 202);
+    width: 100%;
+    height: 100%;
+}
+
+.learn-more-btn:active::after {
+    opacity: 0.6;
+}
+
+.card-bg {
+    position: absolute;
+    bottom: 0;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 0.584) 0%, rgba(0, 0, 0, 0.952) 72%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 65%;
+}
+
+@media (hover) {
+    .card-box {
+        position: relative;
+        height: 500px;
+        width: 350px;
+        background-image: url('../img/norway.jpg');
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.5s;
+        overflow: hidden;
+        .card-title {
+            position: absolute;
+            left: 20px;
+            top: 220px;
+            max-width: max-content;
+            color: map-get($map: $colors, $key: title-color);
+            font-size: 25px;
+            transition: transform 0.5s
+        }
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            max-width: calc(100% + 20px);
+            left: -20px;
+            transform: translateX(-100%);
+            transition: transform 0.5s 0.2s;
+            width: calc(100% + 20px);
+            height: 6px;
+            background-color: map-get($map: $colors, $key: tint-color);
+        }
+    }
+    .card-box>*:not(.card-title) {
+        transform: translateY(75%);
+        opacity: 0;
+        transition: transform 0.5s, opacity 1s;
+    }
+    .card-box .card-title {
+        transform: translateY(220px);
+        transition: transform 0.5s, opacity 1s;
+    }
+    .card-text {
+        position: absolute;
+        bottom: 0;
+        padding: $text-padding;
+        width: 350px;
+        height: 270px;
+        p {
+            padding: 30px 0;
+            font-size: 18px;
+            color: map-get($map: $colors, $key: text);
+        }
+    }
+    .card-box:hover,
+    .card-box:focus-within {
+        transform: scale(1.05);
+    }
+    .card-box:hover>*,
+    .card-box:focus-within>* {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .card-box:hover .card-title::after,
+    .card-box:focus-within .card-title::after {
+        transform: translateX(0);
+    }
+    .learn-more-btn:hover {
+        background-color: #ccf7cf;
+    }
+}
